@@ -30,10 +30,19 @@ Vector& Vector::operator=(const Vector& v) {
     }
     delete[] m_source;
     m_source = new_source;
-    m_size = v.m_size;
     m_capacity = v.m_capacity;
+    m_size = v.m_size;
   }
   return *this;
+}
+
+Vector::Vector(Vector&& v) noexcept
+  : m_source{ v.m_source }
+  , m_size{ v.m_size }
+  , m_capacity{ v.m_capacity } {
+  v.m_source = nullptr;
+  v.m_capacity = 0;
+  v.m_size = 0;
 }
 
 Vector::~Vector() {
