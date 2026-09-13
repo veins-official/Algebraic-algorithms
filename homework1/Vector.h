@@ -3,13 +3,13 @@
 
 class Vector {
 private:
-  int *source;
-  size_t mSize;
-  size_t mCapacity;
+  int *m_source;
+  size_t m_size;
+  size_t m_capacity;
 public:
   Vector ();
   Vector (size_t initial_capacity);
-  Vector (Vector& v);
+  Vector (const Vector& v);
   
   int push (int value);
   
