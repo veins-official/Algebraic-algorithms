@@ -38,11 +38,25 @@ Vector& Vector::operator=(const Vector& v) {
 
 Vector::Vector(Vector&& v) noexcept
   : m_source{ v.m_source }
-  , m_size{ v.m_size }
-  , m_capacity{ v.m_capacity } {
+  , m_capacity{ v.m_capacity }
+  , m_size{ v.m_size } {
   v.m_source = nullptr;
   v.m_capacity = 0;
   v.m_size = 0;
+}
+
+Vector& Vector::operator=(Vector&& v) noexcept {
+  if (this != &v) {
+    delete[] m_source;    
+    m_source = v.m_source;
+    m_capacity = v.m_capacity;
+    m_size = v.m_size;
+
+    v.m_source = nullptr;
+    v.m_capacity = 0;
+    v.m_size = 0;
+  }
+  return *this;
 }
 
 Vector::~Vector() {
