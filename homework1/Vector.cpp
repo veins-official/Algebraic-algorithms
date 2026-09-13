@@ -27,3 +27,17 @@ Vector::~Vector() {
   delete[] m_source;
 }
 
+int Vector::push (int value) {
+  if (m_size >= m_capacity) {
+    size_t new_capacity = (v->capacity == 0) ? 1 : v->capacity * 2;
+    int *tmp = new int[new_capacity];
+    for (size_t i = 0; i < v.m_size; i++) {
+      tmp[i] = m_source[i];
+    }
+    delete[] m_source;
+    m_source = tmp;
+    m_capacity = new_capacity;
+  }
+  m_source[m_size++] = value;
+}
+
