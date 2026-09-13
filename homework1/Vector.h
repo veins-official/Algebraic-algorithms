@@ -12,6 +12,9 @@ public:
   Vector ();
   Vector (size_t initial_capacity);
   Vector (const Vector& v);
+  Vector& operator=(const Vector& v);
+  Vector(Vector&& v) noexcept;
+  Vector& operator=(Vector&& v) noexcept;
   
   void push (int value);
   
