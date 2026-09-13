@@ -13,7 +13,7 @@ public:
   Vector (size_t initial_capacity);
   Vector (const Vector& v);
   
-  int push (int value);
+  void push (int value);
   
   int getElement (size_t index) { return m_source[index]; } // По хорошему, возвращать ошибку при out of bounds
   size_t getSize () const { return m_size; }

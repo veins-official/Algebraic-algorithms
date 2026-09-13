@@ -26,7 +26,7 @@ Vector::~Vector() {
   delete[] m_source;
 }
 
-int Vector::push (int value) {
+void Vector::push (int value) {
   if (m_size >= m_capacity) {
     size_t new_capacity = (m_capacity == 0) ? 1 : m_capacity * 2;
     int *tmp = new int[new_capacity];
@@ -38,7 +38,5 @@ int Vector::push (int value) {
     m_capacity = new_capacity;
   }
   m_source[m_size++] = value;
-  
-  return value;
 }
 
