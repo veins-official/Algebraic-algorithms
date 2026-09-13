@@ -23,3 +23,7 @@ Vector::(const Vector& v)
   }
 }
 
+Vector::~Vector() {
+  delete[] m_source;
+}
+

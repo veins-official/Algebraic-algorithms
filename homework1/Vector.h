@@ -13,11 +13,11 @@ public:
   
   int push (int value);
   
-  ~Vector();
+  int getElement (size_t index) { return m_source[index]; }
+  size_t getSize () { return m_size; }
+  size_t getCapacity () { return m_capacity; }
 
-  int getElement (size_t index);
-  size_t getSize ();
-  size_t getCapacity ();
+  ~Vector();
 }
 
 #endif
